@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  <servlet>
+       <servlet-name>CoreServlet</servlet-name>
+       <servlet-class>
+            org.cxj.servlet.CoreServlet
+       </servlet-class>
+  </servlet>
+  <!--   url-pattern中配置的/CoreServlet用于指定该Servlet的访问路径 -->
+  <servlet-mapping>
+        <servlet-name>CoreServlet</servlet-name>
+        <url-pattern>/CoreServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 扫码网页授权 -->
+  <servlet>
+  		<servlet-name>oauthServlet</servlet-name>
+       <servlet-class>
+            org.cxj.servlet.OAuthServlet
+       </servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>oauthServlet</servlet-name>
+        <url-pattern>/oauthServlet</url-pattern>
+  </servlet-mapping>
+  <!-- 条件查询网页授权 -->
+  <servlet>
+  		<servlet-name>sauthServlet</servlet-name>
+       <servlet-class>
+            org.cxj.servlet.SAuthServlet
+       </servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>sauthServlet</servlet-name>
+        <url-pattern>/sauthServlet</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 用户绑定网页授权 -->
+  <servlet>
+  		<servlet-name>uauthServlet</servlet-name>
+       <servlet-class>
+            org.cxj.servlet.UAuthServlet
+       </servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+        <servlet-name>uauthServlet</servlet-name>
+        <url-pattern>/uauthServlet</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>MyJsp.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
